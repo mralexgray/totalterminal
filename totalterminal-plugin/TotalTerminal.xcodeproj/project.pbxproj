@@ -740,7 +740,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "BIN=\"$PROJECT_DIR/../bin\"\n\ncd \"$BIN/TotalTerminal.app/Contents/Resources/Scripts\"\nosacompile -o \"main.scptd\" \"main.applescript\"\nrm \"main.applescript\"\nmv \"main.scptd/Contents/Resources/Scripts/main.scpt\" \"main.scpt\"\nrm -rf \"main.scptd\"";
-			showEnvVarsInLog = 0;
 		};
 		D6C7F70513D6531C00DAC2BC /* Debug Install */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -843,7 +842,7 @@
 				PRODUCT_NAME = TotalTerminal;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../headers";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../headers/**";
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -864,7 +863,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = TotalTerminal;
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../headers";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../headers/**";
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
@@ -874,6 +873,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CFLAGS = "-fnested-functions";
 				OTHER_LDFLAGS = (
@@ -887,6 +887,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_CFLAGS = "-fnested-functions";
 				OTHER_LDFLAGS = (

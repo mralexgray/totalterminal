@@ -98,7 +98,7 @@
   AUTO_LOGGERF(@"tab=%@", tab);
   TotalTerminal* totalTerminal = [TotalTerminal sharedInstance];
   NSSize originalSize;
-  originalSize = (NSSize)[totalTerminal _originalPreferencesSize];
+  originalSize = (NSSize)[totalTerminal originalPreferencesSize];
   NSWindow* prefsWindow = [self window];
   NSRect frame = [prefsWindow contentRectForFrameRect:[prefsWindow frame]];
   if (originalSize.width == 0) {
@@ -107,7 +107,7 @@
   }
   if ([[tab identifier] isEqualToString:@"VisorPane"]) {
     NSRect viewItemFrame = [[[[self valueForKey:@"tabView"] tabViewItemAtIndex:0] view] frame];
-    NSSize visorPrefpanelSize = [totalTerminal _prefPaneSize];
+    NSSize visorPrefpanelSize = [totalTerminal prefPaneSize];
     // / frame.size.width += visorPrefpanelSize.width - viewItemFrame.size.width;
     frame.size.height += visorPrefpanelSize.height - viewItemFrame.size.height;
     frame.origin.y -= visorPrefpanelSize.height - viewItemFrame.size.height;
